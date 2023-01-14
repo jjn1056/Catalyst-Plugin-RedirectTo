@@ -31,7 +31,7 @@ sub redirect_to {
 
 sub redirect_to_action {
   my $c = shift;
-  my ($code, $action_proto, @args) = $normalize_status->(@_);
+  my ($code, $action_proto, @args) = $normalize_status->($c, @_);
 
   # If its already an action object just use it.
   if(Scalar::Util::blessed($action_proto)) {
